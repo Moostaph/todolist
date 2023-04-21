@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react';
+import AddTask from './components/AddTask';
+import ListTask from './components/ListTask';
+
+const App = () => {
+  const handleFilterChange = (e) => {
+    // Set the filter value in the store
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+      <h1>Todo List</h1>
+      <AddTask />
+      <div>
+        <label>
+          <input
+            type="radio"
+            value="all"
+            name="filter"
+            defaultChecked
+            onChange={handleFilterChange}
+          />
+          All
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="done"
+            name="filter"
+            onChange={handleFilterChange}
+          />
+          Done
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="not"
+            name="filter"
+            onChange={handleFilterChange}
+            />
+         </label>
+         <ListTask/>
 
-export default App;
+        </div>
+        </div>
+
+
+  
+
+
+    
+              ) 
+            };
+
